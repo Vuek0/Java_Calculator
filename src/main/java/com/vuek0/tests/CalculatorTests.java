@@ -1,7 +1,7 @@
-package org.example.tests;
+package com.vuek0.tests;
 
-import org.example.calculator.Calculator;
-import org.example.testframework.TestFramework;
+import com.vuek0.calculator.Calculator;
+import com.vuek0.testframework.TestFramework;
 
 public class CalculatorTests {
     public static void runTests() {

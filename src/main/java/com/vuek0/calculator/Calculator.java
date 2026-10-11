@@ -1,4 +1,4 @@
-package org.example.calculator;
+package com.vuek0.calculator;
 
 public class Calculator {
     private static final int ZERO_DIVISOR = 0;

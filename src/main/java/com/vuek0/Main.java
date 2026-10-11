@@ -1,9 +1,9 @@
-package org.example;
+package com.vuek0;
 
 import java.util.Scanner;
 
-import org.example.calculator.Calculator;
-import org.example.tests.CalculatorTests;
+import com.vuek0.calculator.Calculator;
+import com.vuek0.tests.CalculatorTests;
 
 public class Main {
 
