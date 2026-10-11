@@ -1,6 +1,6 @@
 # Java Basic Console Calculator
 
-Counts basic operators like: +, -, *, /
+Counts basic operators like: +, -, *, /<br>
 Catches exceptions so app won't fall down completely.
 
 # Own small hand-made test framework
