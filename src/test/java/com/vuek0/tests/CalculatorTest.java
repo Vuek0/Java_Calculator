@@ -12,34 +12,31 @@ public class CalculatorTest {
     @Test
     void shouldPlus() {
         int result = Calculator.calculate(5, 3, "+");
-        assertEquals(8.0, result, 0.001);
-
+        assertEquals(8, result);
     }
 
     @Test
     void shouldMinus() {
         int result = Calculator.calculate(10, 5, "-");
-        assertEquals(5.0, result, 0.001);
+        assertEquals(5, result);
     }
 
     @Test
     void shouldMultiply() {
         int result = Calculator.calculate(5, 3, "*");
-        assertEquals(15.0, result, 0.001);
-
+        assertEquals(15, result);
     }
 
     @Test
     void shouldDivide() {
         int result = Calculator.calculate(10, 5, "/");
-        assertEquals(2, result, 0.001);
+        assertEquals(2, result);
     }
 
     // Exceptions tests
     @Test
     void divisionByZeroExpectException() {
-
-        assertThrows(IllegalArgumentException.class,
+        assertThrows(ArithmeticException.class,
                 () -> Calculator.calculate(5, 0, "/"));
     }
 }

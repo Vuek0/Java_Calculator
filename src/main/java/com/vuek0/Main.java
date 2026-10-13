@@ -3,26 +3,26 @@ package com.vuek0;
 import java.util.Scanner;
 
 import com.vuek0.calculator.Calculator;
-import com.vuek0.tests.CalculatorTests;
 
 public class Main {
 
+    private static final String HELLO_CALCULATOR_MESSAGE = "Это калькулятор! Вводить выражения в виде: число оператор число\n" +
+            "Для того чтобы выйти из программы напишите 'exit'";
     private static final int MAX_ELEMENTS_IN_EXPRESSION = 3;
+    private static final String PROGRAM_EXIT_COMMAND = "exit";
+    private static final String INVALID_FORMAT_MESSAGE = "Ошибка: неверный формат. Используйте: число оператор число";
 
     public static void main(String[] args) {
-        CalculatorTests.runTests();
-
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Это калькулятор! Вводить выражения в виде: число оператор число\n" +
-                "Для того чтобы выйти из программы напишите 'exit'");
+        System.out.println(HELLO_CALCULATOR_MESSAGE);
         while(true) {
             System.out.print("Введите выражение: ");
             String expression = scanner.nextLine();
-            if(expression.trim().equals("exit")) break;
+            if(expression.trim().equalsIgnoreCase(PROGRAM_EXIT_COMMAND)) break;
 
             String[] elements = expression.split(" ");
             if(elements.length != MAX_ELEMENTS_IN_EXPRESSION) {
-                System.out.println("Ошибка: неверный формат. Используйте: число оператор число");
+                System.out.println(INVALID_FORMAT_MESSAGE);
                 continue;
             }
             try {
@@ -33,8 +33,8 @@ public class Main {
                 int result = Calculator.calculate(num1, num2, operator);
                 System.out.printf("%s = %d%n", expression, result);
             } catch (NumberFormatException error) {
-                System.out.println("Ошибка: неверный формат. Используйте: число оператор число");
-            } catch (IllegalArgumentException error) {
+                System.out.println(INVALID_FORMAT_MESSAGE);
+            } catch (ArithmeticException | IllegalArgumentException error) {
                 System.out.println(error.getMessage());
             }
 
