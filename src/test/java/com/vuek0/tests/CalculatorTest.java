@@ -11,32 +11,32 @@ public class CalculatorTest {
     // Correct values tests
     @Test
     void shouldPlus() {
-        int result = Calculator.calculate(5, 3, "+");
-        assertEquals(8, result);
+        double result = Calculator.calculate(5, 3, "+");
+        assertEquals(8.0, result, 0.001);
     }
 
     @Test
     void shouldMinus() {
-        int result = Calculator.calculate(10, 5, "-");
-        assertEquals(5, result);
+        double result = Calculator.calculate(10, 5, "-");
+        assertEquals(5.0, result, 0.001);
     }
 
     @Test
     void shouldMultiply() {
-        int result = Calculator.calculate(5, 3, "*");
-        assertEquals(15, result);
+        double result = Calculator.calculate(5, 3, "*");
+        assertEquals(15.0, result, 0.001);
     }
 
     @Test
     void shouldDivide() {
-        int result = Calculator.calculate(10, 5, "/");
-        assertEquals(2, result);
+        double result = Calculator.calculate(10, 5, "/");
+        assertEquals(2.0, result, 0.001);
     }
 
     // Exceptions tests
     @Test
     void divisionByZeroExpectException() {
         assertThrows(ArithmeticException.class,
-                () -> Calculator.calculate(5, 0, "/"));
+                () -> Calculator.calculate(5.0, 0.0, "/"));
     }
 }

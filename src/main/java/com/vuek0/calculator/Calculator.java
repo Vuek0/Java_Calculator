@@ -3,7 +3,7 @@ package com.vuek0.calculator;
 public class Calculator {
     private static final String ZERO_DIVIDE_ERROR_MESSAGE = "Ошибка: деление на ноль";
 
-    public static int calculate(int num1, int num2, String operator){
+    public static double calculate(double num1, double num2, String operator){
         return switch(operator){
             case "+" -> num1 + num2;
             case "-" -> num1 - num2;
@@ -17,4 +17,6 @@ public class Calculator {
             default -> throw new IllegalArgumentException("Неизвестный оператор: " + operator);
         };
     }
+
+
 }
