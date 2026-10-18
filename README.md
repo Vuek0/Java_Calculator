@@ -1,23 +1,28 @@
-# Java Basic Console Calculator
+# Calculator Project
 
-Counts basic operators like: +, -, *, /<br>
-Catches exceptions so app won't fall down completely.
+Консольный калькулятор на Java с историей вычислений
 
-# Own small hand-made test framework
+## Возможности
 
----
-<b> $\color{green}{UPD.}$</b>
-Now using JUnit library for testing
----
+- Базовые операции: +, -, *, /
+- Поддержка чисел с плавающей точкой
+- История последних 10 вычислений
+- Команды: history, last, clear, help, exit
+- Архитектура: каждая операция - отдельный класс (паттерн Strategy)
 
-realized small framework that tests the method for expected result.<br>
-coloring the tests made using ASCII.
-# Dependencies and Plugins
+## Технологии
 
-- JUnit (5.14.3)
-- maven-surfire-plugin
-- 
-# Build system
-
+- Java 21
 - Maven
+- JUnit 5
 
+## Запуск
+
+git clone https://github.com/Vuek0/Java_Calculator.git
+cd Java_Calculator
+mvn compile
+mvn exec:java '-Dexec.mainClass=com.vuek0.Main'
+
+## Тесты
+
+mvn test
